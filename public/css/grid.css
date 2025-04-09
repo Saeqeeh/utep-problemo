@@ -1,0 +1,53 @@
+.parent {
+    display: grid;
+    grid-template-columns: 85px auto;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0px;
+    transition: margin-left 0.4s ease, grid-template-columns 0.4s ease;
+}
+
+.div1 {
+    grid-row: span 5 / span 5;
+}
+
+.div2 {
+    grid-column: span 11 / span 11;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    height: 75px;
+    display: flex;
+    color: #332d2d;
+    justify-content: center; /* Tengahkan secara horizontal */
+    align-items: center; /* Tengahkan secara vertikal */ /* Sama seperti justify-content dan align-items */
+}
+
+.div3 {
+    margin: 0px 40px 10px 40px;
+
+    grid-column: span 11 / span 11;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    flex-wrap: wrap; /* Agar tidak keluar dari parent */
+    /* gap: 20px; Jarak antar card */
+    justify-content: center;
+    background-color: white;
+}
+
+.div4 {
+    margin: 60px 40px 10px 40px;
+    grid-column: span 11 / span 11;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 4;
+    background-color: white;
+    justify-content: center;
+    display: flex;
+}
+
+/* Menyesuaikan grid saat sidebar diperbesar */
+.sidebar:hover ~ .parent {
+    margin-left: 0px; /* Sesuai lebar sidebar yang diperbesar */
+    grid-template-columns: 260px auto;
+}
