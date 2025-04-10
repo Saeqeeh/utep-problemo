@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Penjualan;
 
 class PenjualanController extends Controller
 {
@@ -11,7 +12,8 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        return view('penjualan');
+        $penjualan = Penjualan::all();
+        return view('penjualan', compact('penjualan'));
     }
 
     /**
@@ -19,7 +21,7 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        //
+        return view('produk.create');
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -11,7 +11,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return view('barang');
+        $barang = Barang::all();
+        return view('barang.barang', compact('barang'));
     }
 
     /**
@@ -19,7 +20,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('barang.create');
     }
 
     /**

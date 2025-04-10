@@ -16,30 +16,40 @@
             <img src="{{ URL::asset('image/Cashier_Apps_Logo3-removebg-preview.png') }}" alt="">
         </div>
 
-        <form>
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" placeholder="Username" required>
-                    <i class="fas fa-user"></i>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" placeholder="Email" required>
-                    <i class="fas fa-envelope"></i>
-                </div>
-            </div>
+        <form action="{{ route('register') }}" method="POST">
+    @csrf
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" name="name" placeholder="Username" required>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="password" id="password" placeholder="Password" required>
-                    <i class="fas fa-lock"></i>
-                    <i class="fas fa-eye" id="togglePassword"></i>
-                </div>
-            </div>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Email" required>
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
 
-            <button type="submit">Register</button>
-        </form>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <i class="fas fa-lock"></i>
+            <i class="fas fa-eye" id="togglePassword"></i>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" required>
+            <i class="fas fa-lock"></i>
+        </div>
+    </div>
+
+    <button type="submit">Register</button>
+</form>
+
 
 
     </div>
